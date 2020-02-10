@@ -1,0 +1,29 @@
+// MEDIA QUERY MANAGER
+/*
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == screen-xs {
+		@media only screen and (min-width: 21em) { @content };    // smaller than 336px
+	}
+	@if $breakpoint == screen-xs {
+		@media only screen and (max-width: 36em) { @content };    //576px
+	}
+	@if $breakpoint == screen-sm {
+		@media only screen and (max-width: 48em) { @content };    //768px
+	}
+	@if $breakpoint == screen-md {
+		@media only screen and (max-width: 62em) { @content };     //992px
+	}
+	@if $breakpoint == screen-lg {
+		@media only screen and (max-width: 75em) { @content };    //1200px
+	}
+	@if $breakpoint == screen-xl {
+		@media only screen and (max-width: 90em) { @content };    // bigger than 1200px
+	}
+	@if $breakpoint == screen-xxl {
+		@media only screen and (min-width: 90em) { @content };    // bigger than 1440px
+	}
+}
